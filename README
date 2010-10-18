@@ -1,1 +1,9 @@
-little tools for django and bash
+*project_templates is a changed and specialized version of django.conf.project_templaes
+it has special timezone, mediaurl, etc.. definitions
+
+*django-create-files creates initial files for a new project such as templates and
+media dirs or special dirs like js, css, images as shown on the project_templates.settings.py file
+and also creates a base.html file with some block tags
+
+*pylink adds your python modules to your python path. but i preffer to use $PYTHONPATH variable 
+in my bashrc file so no need to use sudo or other commands to reach the python path. 
