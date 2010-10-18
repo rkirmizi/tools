@@ -1,0 +1,44 @@
+#!/bin/bash
+# This file is under revision control.
+# Author: Recep KIRMIZI - http://github.com/rkirmizi
+# Filename: django-create-files
+# Usage: Add the django-create-files to somewhere in your path
+#		and execute it
+# Notes: This script creates initial dirs and files for your
+#        django project. my default settings file has been
+# 		 created via a special django templates. You can find
+#		 them inside the project_template dir on github
+#
+# 		 This file doesnt include so many conditions about
+#		 the project it's your own risk to use it.
+
+if [ -e "settings.py" -a -e "urls.py" ]; then
+	if ! [ -d "templates" -a -d "media" ]; then
+		mkdir -p templates media/{css,js,images}
+		touch media/css/style.css
+		echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<title>{% block title %}{% endblock title %} | Base site title</title>
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link rel="stylesheet" type="text/css" href="{{MEDIA_URL}}css/style.css" />
+		<!--<script type="text/javascript" src="{{MEDIA_URL}}js/"></script>-->
+	{% block extra_head %}{% endblock extra_head %}
+	</head>
+	<body>
+	<p>Test</p>
+	{% block content %}{% endblock content %}
+	</body>
+	</html>' > templates/base.html
+		echo "Your templates and media dirs are successfully created.."
+		echo "Your js, images and css dirs are successfully created.."
+		echo "Your base.html file created with title, extra_head and content blocks.."
+		echo "Have fun :)"
+	else
+		echo "This directory already has a configuration.."
+	fi
+else
+	echo 'This directory is not a django project directory..'
+fi
