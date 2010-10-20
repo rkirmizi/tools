@@ -35,7 +35,7 @@ if [ -e "settings.py" -a -e "urls.py" ]; then
 		{% block title %}Ana Sayfa{% endblock title %}
 		{% block content %}
 		Site Ana Sayfası
-		{% endblock content %}'
+		{% endblock content %}' > templates/home.html
 		echo '
 		* {
 			margin:0px;
