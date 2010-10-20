@@ -31,42 +31,34 @@ if [ -e "settings.py" -a -e "urls.py" ]; then
 	{% block content %}{% endblock content %}
 	</body>
 	</html>' > templates/base.html
-		echo '{% extends "base.html "%}
+		echo '{% extends "base.html" %}
 		{% block title %}Ana Sayfa{% endblock title %}
 		{% block content %}
 		Site Ana Sayfası
 		{% endblock content %}' > templates/home.html
-		echo '
-		* {
-			margin:0px;
-			padding:0px;
-			font-family:Arial, Helvetica, sans-serif;
-		}
-
-		ul {
-			list-style:none;
-		}
-
-		img {
-			border:none;
-		}
-
-		.temizle {
-			clear:both;
-		}
-
-		body {
-			background-color:#000;
-			background-position:center top;
-			background-repeat:repeat-x;
-			color:#FFF;
-			font-size:12px;
-		}
-
-		a {
-			text-decoration:underline;
-			color:#fff;
-		}' > media/css/base.css
+		echo '* {
+	margin:0px;
+	padding:0px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+ul {
+	list-style:none;
+}
+img {
+	border:none;
+}
+.temizle {
+	clear:both;
+}
+body {
+	background-color:#FFFFFF;
+	color:#000000;
+	font-size:12px;
+}
+a {
+	text-decoration:none;
+	color:#fff;
+}' > media/css/base.css
 		echo "Your templates and media dirs are successfully created.."
 		echo "Your js, images and css dirs are successfully created.."
 		echo "Your base.html file created with title, extra_head and content blocks.."
