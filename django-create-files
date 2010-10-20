@@ -15,7 +15,6 @@
 if [ -e "settings.py" -a -e "urls.py" ]; then
 	if ! [ -d "templates" -a -d "media" ]; then
 		mkdir -p templates media/{css,js,images}
-		touch media/css/style.css
 		echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
@@ -23,7 +22,7 @@ if [ -e "settings.py" -a -e "urls.py" ]; then
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<link rel="stylesheet" type="text/css" href="{{MEDIA_URL}}css/style.css" />
+		<link rel="stylesheet" type="text/css" href="{{MEDIA_URL}}css/base.css" />
 		<!--<script type="text/javascript" src="{{MEDIA_URL}}js/"></script>-->
 	{% block extra_head %}{% endblock extra_head %}
 	</head>
@@ -32,6 +31,42 @@ if [ -e "settings.py" -a -e "urls.py" ]; then
 	{% block content %}{% endblock content %}
 	</body>
 	</html>' > templates/base.html
+		echo '{% extends "base.html "%}
+		{% block title %}Ana Sayfa{% endblock title %}
+		{% block content %}
+		Site Ana Sayfası
+		{% endblock content %}'
+		echo '
+		* {
+			margin:0px;
+			padding:0px;
+			font-family:Arial, Helvetica, sans-serif;
+		}
+
+		ul {
+			list-style:none;
+		}
+
+		img {
+			border:none;
+		}
+
+		.temizle {
+			clear:both;
+		}
+
+		body {
+			background-color:#000;
+			background-position:center top;
+			background-repeat:repeat-x;
+			color:#FFF;
+			font-size:12px;
+		}
+
+		a {
+			text-decoration:underline;
+			color:#fff;
+		}' > media/css/base.css
 		echo "Your templates and media dirs are successfully created.."
 		echo "Your js, images and css dirs are successfully created.."
 		echo "Your base.html file created with title, extra_head and content blocks.."

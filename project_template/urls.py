@@ -4,6 +4,6 @@ from django.conf.urls.defaults import *
 #admin.autodiscover()
 
 urlpatterns = patterns('',
-    #(r'^{{ project_name }}/', include('{{ project_name }}.foo.urls')),
-    #(r'^admin/', include(admin.site.urls)),
+    (r'^$', 'django.views.generic.simple.direct_to_template', {'template': 'home.html'}),
+#    (r'^admin/', include(admin.site.urls)),
 )

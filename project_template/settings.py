@@ -16,8 +16,8 @@ if socket.gethostname() == 'li184-202': # remote server ise...
     WEB_URL = 'http://siteadi.com'
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.',# Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-            'NAME': '',
+            'ENGINE': 'django.db.backends.sqlite3',# Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+            'NAME': '{{project_name}}.db',
             'USER': '',
             'PASSWORD': '',
             'HOST': '',
@@ -30,8 +30,8 @@ else:
     WEB_URL = 'http://localhost:8000'
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.',# Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-            'NAME': '',
+            'ENGINE': 'django.db.backends.sqlite3',# Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+            'NAME': '{{project_name}}.db',
             'USER': '',
             'PASSWORD': '',
             'HOST': '',
@@ -84,7 +84,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.messages',
-    # 'django.contrib.admin',
+    #'django.contrib.admin',
     # 'django.contrib.admindocs',
 )
 
