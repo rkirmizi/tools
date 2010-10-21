@@ -17,7 +17,7 @@ if socket.gethostname() == 'li184-202': # remote server ise...
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',# Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-            'NAME': '{{project_name}}.db',
+            'NAME': '{{ project_name }}.db',
             'USER': '',
             'PASSWORD': '',
             'HOST': '',
@@ -31,7 +31,7 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',# Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-            'NAME': '{{project_name}}.db',
+            'NAME': '{{ project_name }}.db',
             'USER': '',
             'PASSWORD': '',
             'HOST': '',
