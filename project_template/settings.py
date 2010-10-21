@@ -1,4 +1,4 @@
-#!/usr/bin/env/python
+#!/usr/bin/env python
 #-*- coding: utf-8 -*-
 # Django settings for {{ project_name }} project.
 
